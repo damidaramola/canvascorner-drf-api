@@ -29,3 +29,16 @@ Returns information on who the profile owner is
 
 def __str__(self):
     return f"{self.owner}'s profile"
+
+
+"""
+Trigger django signal when user creates a profile
+"""
+
+
+def create_profile(sender_instance, created, **kwargs):
+    if created:
+        Profile.objects.create(owner=instance)
+
+
+post_save.connect(create_profile, sender=User)
