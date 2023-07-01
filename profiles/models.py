@@ -11,7 +11,7 @@ has a one-to-one relationship with user model
 class Profile(models.Model):
     owner = models.OneToOneField(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=100, blank=True)
-    description = models.CharField(max_length=255, blank=True)
+    description = models.TextField(blank=True)
     image = models.ImageField(upload_to='images/',
                               default='../default_profile_vvucyn')
     created_at = models.DateTimeField(auto_now_add=True)
@@ -36,7 +36,7 @@ Trigger django signal when user creates a profile
 """
 
 
-def create_profile(sender_instance, created, **kwargs):
+def create_profile(sender, instance, created, **kwargs):
     if created:
         Profile.objects.create(owner=instance)
 
