@@ -1,10 +1,13 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from .models import Profile
-from .serializers import Profile
+from .serializers import ProfileSerializer
 
 
-# Create class 
+"""
+add profile serializer to ProfileList
+"""
+
 
 class ProfileList(APIView):
     def get(self, request):
