@@ -8,6 +8,7 @@ from .serializers import ProfileSerializer
 
 """
 add profile serializer to ProfileList
+ProfileList will list all profiles
 """
 
 
@@ -25,6 +26,8 @@ we are getting posts by id here
 
 
 class ProfileDetail(APIView):
+    serializer_class = ProfileSerializer
+
     def get_object(self, pk):
         try:
             profile = Profile.objects.get(pk=pk)
