@@ -1,6 +1,10 @@
 from rest_framework import serializers
 from .models import Profile
 
+"""
+create serializer for profile
+"""
+
 
 class ProfileSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
@@ -16,3 +20,5 @@ class ProfileSerializer(serializers.ModelSerializer):
             'id', 'owner', 'created_at', 'updated_at',
             'name', 'description', 'image', 'is_owner'
         ]
+
+
