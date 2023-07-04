@@ -8,9 +8,18 @@ from .serializers import PostSerializer
 
 
 class PostList(APIView):
+    serializer_class = PostSerializer
+
     def get(self, request):
         posts = Post.objects.all()
         serializer = PostSerializer(posts, many=True, context={
             'request': request
         })
         return Response(serializer.data)
+
+    def post(self, request):
+        serializer = PostSerializer(data=request, context={'request': request})
+        if serializer.isvalid():
+            serializer.save(owner=request.user)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
