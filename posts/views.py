@@ -1,3 +1,4 @@
+from rest_framework import status, permissions 
 from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -9,7 +10,14 @@ from .serializers import PostSerializer
 
 class PostList(APIView):
     serializer_class = PostSerializer
-
+    """
+    Make sure users are authenticated when requesting 
+    write access
+    """
+    permission_classes = [
+        permission.IsAuthenticatedOrReadOnly 
+    ]
+    
     def get(self, request):
         posts = Post.objects.all()
         serializer = PostSerializer(posts, many=True, context={
