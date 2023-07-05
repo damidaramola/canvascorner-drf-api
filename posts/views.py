@@ -1,4 +1,4 @@
-from rest_framework import status, permissions 
+from rest_framework import status, permissions
 from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -15,9 +15,9 @@ class PostList(APIView):
     write access
     """
     permission_classes = [
-        permission.IsAuthenticatedOrReadOnly 
+        permissions.IsAuthenticatedOrReadOnly
     ]
-    
+
     def get(self, request):
         posts = Post.objects.all()
         serializer = PostSerializer(posts, many=True, context={

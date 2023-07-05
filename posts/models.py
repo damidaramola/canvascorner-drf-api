@@ -16,14 +16,11 @@ class Post(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     title = models.CharField(max_length=255)
-    category = models.CharField(max_length=50, choices=category_choices)
+    category = models.CharField(max_length=50, choices=category_choices,
+                                default='normal')
     description = models.TextField(blank=True)
     image = models.ImageField(upload_to='images/',
-                              default='../default_profile_vvucyn')
-
-    image_filter = models.CharField(
-        max_length=32, choices=category_choices, default='normal'
-    )
+                              default='../default_profile_vvucyn', blank=True)
 
     class Meta:
         ordering = ['-created_at']

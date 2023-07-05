@@ -8,7 +8,7 @@ create serializer for posts
 
 
 class PostSerializer(serializers.ModelSerializer):
-    
+
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
     profile_id = serializers.ReadOnlyField(source='owner.profile.id')
@@ -37,6 +37,5 @@ class PostSerializer(serializers.ModelSerializer):
         model = Post
         fields = ['id', 'owner', 'is_owner', 'profile_id', 'profile_image',
                   'created_at', 'updated_at',
-                  'title', 'description',   'category', 'image', 'image_filter']
-
-    
+                  'title', 'description', 'category', 'image',
+                  ]
