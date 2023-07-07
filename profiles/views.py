@@ -25,6 +25,7 @@ class ProfileList(APIView):
 """
 add profile serializer to DetailList
 we are getting posts by id here 
+Profile Detail allows you to add CRUD operations
 """
 
 
