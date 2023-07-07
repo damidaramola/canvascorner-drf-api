@@ -25,7 +25,8 @@
    "terminal.integrated.gpuAcceleration": "canvas",
    "editor.defaultFormatter": "HookyQR.beautify",
    "cSpell.words": [
-      "CLOUDINARY"
+      "CLOUDINARY",
+      "dami"
    ],
    "[python]": {
       "editor.defaultFormatter": "ms-python.python"
