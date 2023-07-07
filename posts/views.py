@@ -59,7 +59,7 @@ class PostDetail(APIView):
         return Response(serializer.data)
 
     """
-    add ability to update profile with put method
+    add ability to update post with put method
     """
 
     def put(self, request, pk):
@@ -70,3 +70,12 @@ class PostDetail(APIView):
             serializer.save()
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    """
+    add ability to DELETE post with put method
+    """
+
+    def delete(self, request, pk):
+        post = self.get_object(pk)
+        post.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
