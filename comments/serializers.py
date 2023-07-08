@@ -21,3 +21,11 @@ class CommentSerializer(serializer.ModelSerializer):
         model = Comment
         fields = ['id', 'owner', 'is_owner', 'profile_id', 'profile_image',
                   'created_at', 'updated_at', 'image', 'content']
+
+
+class CommentDetailSerializer(CommentSerializer):
+    """
+    CommentDetailSerializer class
+     inherits from the CommentSerializer
+    """
+    post = serializers.ReadOnlyField(source='post.id')
