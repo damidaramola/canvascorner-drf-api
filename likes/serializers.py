@@ -1,0 +1,17 @@
+from rest_framework import serializers
+from .models import Likes
+
+"""Create Likes Serializer
+"""
+
+
+class LikesSerializer(serializers.ModelSerializer):
+
+    owner = serializers.ReadOnlyField(source='owner.username')
+
+    class Meta:
+        model = Likes
+        fields = ['id',
+                  'owner',
+                  'created_at',
+                  'post',]
