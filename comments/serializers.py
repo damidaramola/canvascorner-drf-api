@@ -7,7 +7,7 @@ create serializer for comments
 """
 
 
-class CommentSerializer(serializer.ModelSerializer):
+class CommentSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
     profile_id = serializers.ReadOnlyField(source='owner.profile.id')
@@ -20,7 +20,8 @@ class CommentSerializer(serializer.ModelSerializer):
     class Meta:
         model = Comment
         fields = ['id', 'owner', 'is_owner', 'profile_id', 'profile_image',
-                  'created_at', 'updated_at', 'image', 'content']
+                  'post',
+                  'created_at', 'updated_at', 'content']
 
 
 class CommentDetailSerializer(CommentSerializer):
