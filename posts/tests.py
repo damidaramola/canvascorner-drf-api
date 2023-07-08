@@ -35,14 +35,48 @@ class PostListViewTests(APITestCase):
         count = Post.objects.count()
         self.assertEqual(count, 1)
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
-    
+
     """
     Test to make sure a logged out in user can't create a post
-    make test fail by adding 201 status code instead of 403 forbidden code status
+    make test fail by adding 201 status code instead of 403 forbidden code
+    status
     """
-    
+
     def test_logged_out_user_cant_create_post(self):
         response = self.client.post('/posts/', {'title': 'title'})
         self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
-        
-    
+
+    """
+    set up unit tests for post detail
+    """
+
+
+class PostDetailViewTests(APITestCase):
+    def setUp(self):
+        dami = User.objects.create_user(username='dami', password='passw')
+        anna = User.objects.create_user(username='anna', password='passw')
+        Post.objects.create(
+            owner=dami, title='title', description='damis content'
+        )
+        Post.objects.create(
+            owner=anna, title='second title', description='annas content'
+        )
+
+    """
+    test if its possible to retrieve a post with a valid id 
+    make test fail by using 201 status code instead of 200 status code
+    """
+
+    def test_can_retrieve_post_using_valid_id(self):
+        response = self.client.get('/posts/1/')
+        self.assertEqual(response.data['title'], 'title')
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+    """
+    test if its not possible to fetch a post with an invalid id 
+    make test fail by using 200 status code instead of 404 status code
+    """
+
+    def test_cannot_retrieve_post_using_invalid_id(self):
+        response = self.client.get('/posts/13/')
+        self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
