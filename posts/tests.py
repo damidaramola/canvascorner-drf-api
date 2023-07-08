@@ -10,7 +10,7 @@ class PostListViewTests(APITestCase):
     """
 
     def setUp(self):
-        User.objects.create_User(username='dami', password='passw')
+        User.objects.create_user(username='dami', password='passw')
     """
     Test to make a get request to /posts/ to list all posts
     make test fail by adding 201 status instead of 200 status
@@ -19,4 +19,4 @@ class PostListViewTests(APITestCase):
         dami = User.objects.get(username='dami')
         Post.objects.create(owner=dami, title='title')
         response = self.client.get('/posts/')
-        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
