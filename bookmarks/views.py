@@ -12,7 +12,7 @@ from bookmarks.serializers import BookmarkSerializer
 class BookmarkList(generics.ListCreateAPIView):
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     serializer_class = BookmarkSerializer
-    queryset = Bookmark.object.all()
+    queryset = Bookmark.objects.all()
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)

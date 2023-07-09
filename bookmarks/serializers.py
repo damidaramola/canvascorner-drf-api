@@ -7,7 +7,7 @@ Create Bookmark Serializer
 """
 
 
-class BookmarkSerializer(serializers.ModelsSerializer):
+class BookmarkSerializer(serializers.ModelSerializer):
 
     owner = serializers.ReadOnlyField(source='owner.username')
 

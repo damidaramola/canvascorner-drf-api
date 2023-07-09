@@ -20,14 +20,12 @@ class Profile(models.Model):
     class Meta:
         ordering = ['created_at']
 
+        """
+        Returns information on who the profile owner is
+        """
 
-"""
-Returns information on who the profile owner is
-"""
-
-
-def __str__(self):
-    return f"{self.owner}'s profile"
+    def __str__(self):
+        return f"{self.owner}'s profile"
 
 
 """
@@ -41,5 +39,3 @@ def create_profile(sender, instance, created, **kwargs):
 
 
 post_save.connect(create_profile, sender=User)
-
-
