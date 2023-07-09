@@ -21,6 +21,11 @@ class PostList(generics.ListCreateAPIView):
         serializer.save(owner=self.request.user)
 
 
+"""
+if you own a post, get it ,edit it or delete it 
+"""
+
+
 class PostDetail(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [IsOwnerOrReadOnly]
     serializer_class = PostSerializer
