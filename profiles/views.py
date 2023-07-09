@@ -15,7 +15,7 @@ class ProfileList(generics.ListAPIView):
     serializer_class = ProfileSerializer
 
     """
-    Retrieve or update a profile if you're the owner.
+    Allows you to Retrieve or update a profile if you're the owner.
     """
 
 
