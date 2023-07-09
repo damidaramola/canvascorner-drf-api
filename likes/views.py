@@ -3,6 +3,11 @@ from canvascorner_drf_api.permissions import IsOwnerOrReadOnly
 from likes.models import Likes
 from likes.serializers import LikesSerializer
 
+"""
+    A class for LikeDetail
+    User to be able to list and create their like
+    """
+
 
 class LikesList(generics.ListCreateAPIView):
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
@@ -12,10 +17,11 @@ class LikesList(generics.ListCreateAPIView):
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
 
-    """
-    A class for LikeDetail
-    User to be able to retrieve and delete their like
-    """
+
+"""
+A class for LikeDetail
+User to be able to retrieve and delete their like
+"""
 
 
 class LikesDetail(generics.RetrieveDestroyAPIView):
