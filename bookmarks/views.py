@@ -20,7 +20,7 @@ class BookmarkList(generics.ListCreateAPIView):
 
 """
 A class for BookmarkDetail
-User to be able to retrieve and delete their like
+User to be able to retrieve and remove their bookmark 
 """
 
 
