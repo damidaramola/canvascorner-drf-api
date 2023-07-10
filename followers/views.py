@@ -1,7 +1,13 @@
 from rest_framework import generics, permissions
 from canvascorner_drf_api.permissions import IsOwnerOrReadOnly
-from followers.models import Follower
-from followers.serializers import FollowerSerializer
+from .models import Follower
+from .serializers import FollowerSerializer
+
+"""
+       A class for FollowerList all instances of a user can be listed 
+       'create' a follow where logged in users can follow another account 
+       Perform_create associates the current logged in user with a follower.
+       """
 
 
 class FollowerList(generics.ListCreateAPIView):
