@@ -19,8 +19,13 @@ class ProfileList(generics.ListAPIView):
         followers_count=Count('owner__followed', distinct=True),
         following_count=Count('owner__following', distinct=True),
     ).order_by('-created_at')
-
     serializer_class = ProfileSerializer
+
+    filter_backends = [
+        'posts_count',
+        'followers_count',
+        'following_count'
+    ]
 
     """
     Allows you to Retrieve or update a profile if you're the owner.
