@@ -27,9 +27,17 @@ class PostList(generics.ListCreateAPIView):
         DjangoFilterBackend,
     ]
     
+    """
+    Return posts of users posts that profile owner follows
+    Return all the posts a user with a given profile id liked
+    Return all the posts a user with a given profile id booked marked
+    Return all user posts
+    """
     filterset_fields = [
-        'owner__followed__owner__profile'
-        'likes__owner__profile'
+        'owner__followed__owner__profile',
+        'likes__owner__profile',
+        'post_bookmarks__owner__profile',
+        'owner__profile'
     ]
 
     search_fields = [
