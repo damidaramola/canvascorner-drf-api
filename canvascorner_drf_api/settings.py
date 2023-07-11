@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'likes',
     'followers',
     'bookmarks',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
