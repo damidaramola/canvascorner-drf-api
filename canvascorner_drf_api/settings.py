@@ -64,8 +64,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEV' in os.environ
 
-ALLOWED_HOSTS = ['8000-damidaramol-canvascorne-c86zo2ts1at.ws-eu101.gitpod.io',
-                 'canvascorner-drf-api.herokuapp.com']
+ALLOWED_HOSTS = ['localhost',
+                 'canvascorner_drf_api.herokuapp.com']
 
 
 # Application definition
