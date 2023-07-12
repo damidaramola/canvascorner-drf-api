@@ -65,7 +65,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = 'DEV' in os.environ
 
 ALLOWED_HOSTS = ['localhost',
-                 'canvascorner_drf_api.herokuapp.com']
+                 'canvascorner-drf-api.herokuapp.com']
 
 
 # Application definition
