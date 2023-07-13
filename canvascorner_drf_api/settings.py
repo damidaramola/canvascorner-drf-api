@@ -65,7 +65,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = 'DEV' in os.environ
 
 ALLOWED_HOSTS = ['localhost',
-                 'canvascorner-drf-api-8c6faae9ad24.herokuapp.com ']
+                 'canvascorner-drf-api-8c6faae9ad24.herokuapp.com', '8000-damidaramol-canvascorne-c86zo2ts1at.ws-eu101.gitpod.io']
 
 
 # Application definition
@@ -122,6 +122,7 @@ else:
     CORS_ALLOWED_ORIGIN_REGEXES = [
         r"^https://.*\.gitpod\.io$",
      ]
+    
 CORS_ALLOW_CREDENTIALS = True
 
 ROOT_URLCONF = 'canvascorner_drf_api.urls'
