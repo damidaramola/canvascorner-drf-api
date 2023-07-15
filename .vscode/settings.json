@@ -26,7 +26,8 @@
    "editor.defaultFormatter": "HookyQR.beautify",
    "cSpell.words": [
       "CLOUDINARY",
-      "dami"
+      "dami",
+      "Daramola"
    ],
    "[python]": {
       "editor.defaultFormatter": "ms-python.python"
