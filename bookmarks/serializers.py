@@ -16,7 +16,7 @@ class BookmarkSerializer(serializers.ModelSerializer):
         fields = ['id',
                   'owner',
                   'bookmarked_at',
-                  'post',]
+                  'post', ]
 
     """
     Handle if bookmark is duplicated by the same user 

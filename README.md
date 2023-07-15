@@ -75,7 +75,32 @@ This is entity relationship between the each model in the database model structu
 - Django 
 - Python 
 
-### Tools and Libraries 
+
+## Testing 
+
+Manual Testing was conducted on this application in alignment with the user stories
+
+- As an admin, I want to be able to create, edit and delete the users, posts, comments and likes, so that I can have a control over the content of the application and remove any potential inappropriate content
+
+**Test** | **Action** | **Expected Result** | **Actual Result**
+-------- | ------------------- | ------------------- | -----------------
+User | Create, update & delete user | A user can be created, edited or deleted | Works as expected
+User | Change permissions | User permissions can be updated | Works as expected
+Profile | Create, update & delete | User profile can be created, edited or deleted | Works as expected
+Follower | Create & delete | Follow or unfollow user | Works as expected
+Post | Create, update & delete | A post can be created, edited or deleted | Works as expected
+Comment | Create, update & delete | A comment can be created, edited or deleted | Works as expected
+Like | Create & delete | A like can be created or deleted (like / unlike post) | Works as expected
+Bookmark | Create & delete | A bookmark can be created or deleted (bookmark /un-bookmark post) | Works as expected
+
+## Validation
+
+### PEP8 Validation
+[This PEP8](https://pep8ci.herokuapp.com/) Validation Service was used to check the code for PEP8 requirements. All the code passes with no errors.
+
+
+
+## Tools and Libraries 
 
 - [Django REST Framework](https://www.django-rest-framework.org/) This was used to build the API  in the back-end
 - [Django AllAuth](https://django-allauth.readthedocs.io/en/latest/index.html) was used for the authentication of users
@@ -87,3 +112,10 @@ This is entity relationship between the each model in the database model structu
 - [Gitpod)](https://gitpod.io/workspaces) the virtual IDE workspace used to build this site
 - [APITestCase](https://www.django-rest-framework.org/api-guide/testing/) - Django Rest Framework APITestCase was used for automated testing
 - [Cloudinary](https://cloudinary.com/) to store static files and images 
+
+
+## Credits
+
+### Code
+
+This project was created based on the Code Institute's Django REST API walkthrough project ['Moments'](https://github.com/Code-Institute-Solutions/drf-api) 
