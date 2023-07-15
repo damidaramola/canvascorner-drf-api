@@ -22,7 +22,7 @@ This is the backend section of the CanvasCorner project where the http requests 
 
 ## Database 
 
-This diagram shows the entity relationship between the each model in the database model structure of the application:
+This is entity relationship between the each model in the database model structure of the application:
 
 ### User Model
 - The user model is part of the Django Allauth library
@@ -67,3 +67,23 @@ This diagram shows the entity relationship between the each model in the databas
 ### Bookmark model
 
 - the Bookmark model contains the following fields: owner, post and bookmarked_at
+
+## Technologies used 
+
+### Languages and Frameworks
+
+- Django 
+- Python 
+
+### Tools and Libraries 
+
+- [Django REST Framework](https://www.django-rest-framework.org/) This was used to build the API  in the back-end
+- [Django AllAuth](https://django-allauth.readthedocs.io/en/latest/index.html) was used for the authentication of users
+- [Pillow](https://pillow.readthedocs.io/en/stable/) was used for image processing and validation
+- [Psycopg2](https://www.psycopg.org/docs/) was used as a PostgreSQL database adapter for Python programming language 
+- [PostgreSQL](https://www.postgresql.org/) I used the PostgreSQL database
+- [Git](https://git-scm.com/) was used for version control via Gitpod terminal to push the code to GitHub
+- [GitHub](https://github.com/) was utilized as a remote repository to store my project code
+- [Gitpod)](https://gitpod.io/workspaces) the virtual IDE workspace used to build this site
+- [APITestCase](https://www.django-rest-framework.org/api-guide/testing/) - Django Rest Framework APITestCase was used for automated testing
+- [Cloudinary](https://cloudinary.com/) to store static files and images 
