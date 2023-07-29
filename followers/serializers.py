@@ -20,7 +20,7 @@ class FollowerSerializer(serializers.ModelSerializer):
                   'followed_name',]
 
     """
-    Handle if likes are duplication/integrity errors
+    Handle if follow are duplication/integrity errors
     """
     def create(self, validated_data):
         try:

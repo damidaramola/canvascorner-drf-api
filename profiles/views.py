@@ -14,7 +14,7 @@ from canvascorner_drf_api.permissions import IsOwnerOrReadOnly
 
 
 class ProfileList(generics.ListAPIView):
-
+    # permission_classes = [IsAuthenticated]
     queryset = Profile.objects.annotate(
         posts_count=Count('owner__post', distinct=True),
         followers_count=Count('owner__followed', distinct=True),
