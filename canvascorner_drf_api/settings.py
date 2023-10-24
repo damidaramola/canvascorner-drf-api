@@ -66,7 +66,7 @@ DEBUG = False
 
 
 ALLOWED_HOSTS = [os.environ.get('ALLOWED_HOST'),
-                 'localhost', ]
+                 'localhost','8000-damidaramol-canvascorne-c86zo2ts1at.ws-eu102.gitpod.io' ]
 
 
 # Application definition
